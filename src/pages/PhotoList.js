@@ -36,16 +36,7 @@ class PhotoList extends React.Component {
             <>
                 {photos.length !== 0 && (
                     <div className="grid">
-
                         {photos.map(photo => (
-                            // <Link
-                            //   key={photo.id}
-                            //   to={{
-                            //     pathname: `/photos/${photo.id}`
-                            //   }}
-                            // >
-
-
                             // <a href={photo.thumbnailUrl}>
                             <div>
                                 <p>{photo.title}</p>
@@ -55,12 +46,10 @@ class PhotoList extends React.Component {
                                     show={this.state.showModal === photo.id}
                                     onHide={() => this.hideModal(photo.id)}
                                     title={photo.title}
-                                    thumbnailUrl={photo.thumbnailUrl}
+                                    url={photo.url}
                                 />
                             </div>
                             // </a>
-
-                            // </Link>
                         ))}
 
                         <Link to="/">

@@ -5,15 +5,18 @@ class Modal extends Component {
   render() {
     console.log(this.props.show);
     return (
-      <React.Fragment>
+      <>
         {this.props.show && (
           <div className="modal">
+              <div className="modal-scroll">
+
             <h1>{this.props.title}</h1>
-            <img src={this.props.thumbnailUrl} alt="" />
-            <button onClick={this.props.onHide}>Close Modal</button>
+            <img src={this.props.url} alt="" className="url-img"/>
+            <button onClick={this.props.onHide} className="close-btn">Close Modal</button>
+              </div>
           </div>
         )}
-      </React.Fragment>
+      </>
     );
   }
 }
