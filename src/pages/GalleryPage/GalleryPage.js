@@ -5,13 +5,18 @@ const GalleryPage = (props) => {
   
   const photo = props.getPhoto(props.match.params.idx);
   
-  console.log(photo)
+  // console.log(photo)
   return (
     <div className='starship-page'>
       {photo ?
         <section className='starship'>
-        <div className='line'>Name: {photo.title}</div>
-        <div className='line'>Model: {photo.thumbnailUrl}</div>
+        <div className='line'>
+          <p>Name: {photo.title}</p>
+       
+        
+        <img src={photo.thumbnailUrl} alt=""/>
+        </div>
+        {/* <div className='line'>Model: {photo.thumbnailUrl}</div> */}
         <Link to='/'>←</Link>
       </section>
         :
