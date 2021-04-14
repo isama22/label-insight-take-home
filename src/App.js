@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PhotoList from "./pages/PhotoList";
 import Photo  from "./pages/Photo";
 
+
 const App = () => {
   return (
     // <div className="App">
