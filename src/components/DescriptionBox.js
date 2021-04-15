@@ -1,59 +1,57 @@
 import React, { Component } from 'react';
-import Description from './Description'
+// import Description from './Description'
 import '../App.css'
 
 class DescriptionBox extends Component {
+    
+    userData;
+
     constructor(props) {
         super(props);
+        this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
         this.state = {
-            descriptions: [],
-            newDescription: [],
-            id: this.props.id
+            description: ''
         }
     }
 
-    formRef = React.createRef();
-
-    addDescription = e => {
-        if (!this.formRef.current.checkValidity()) return;
-        e.preventDefault();
-        this.setState(state => ({
-            descriptions: [...state.descriptions, this.state.newDescription],
-            formInvalid: true
-        }))
+    onChangeDescription(e) {
+        this.setState({ description: e.target.value })
     }
 
-    handleChange = e => {
-        console.log(e.target.checkValidity())
-        const newDescription = {
-            ...this.state.newDescription,
-            [e.target.name]: e.target.value
+    componentDidMount() {
+        this.userData = JSON.parse(localStorage.getItem('user'));
+        if (localStorage.getItem('user')) {
+            this.setState({
+                description: this.userData.description
+            })
+        } else {
+            this.setState({
+                description: ''
+            })
         }
-        this.setState({
-            newDescription,
-            formInvalid: !this.formRef.current.checkValidity()
-        })
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        localStorage.setItem('user', JSON.stringify(nextState))
+    }
+
+    onSubmit(e) {
+        e.preventDefault()
+        console.log(this.state.props)
     }
     render() {
         return (
             <>
                 <div className="description-box">
-                    {/* <Description id={this.state.id} description={this.state.description} /> */}
-                    {this.state.descriptions.map(d => (
-                        <p>{d.description}</p>
-                    ))}
+                    <p>{this.state.description}</p>
                     <div className="input-div">
-                        <form ref={this.formRef} onSubmit={this.addDescription}>
-                            <p>add a description: </p>
-
-                            <input 
-                            type="text" 
-                            placeholder={this.state.id} 
-                            name="description"
-                            value={this.state.newDescription.description}
-                            onChange={this.handleChange}
-                            />
-                            <button onClick={this.addDescription}>  →  </button>
+                        <form onSubmit={this.onSubmit}>
+                            <div>
+                                <label>description</label>
+                                <input type="text" onChange={this.onChangeDescription} />
+                                <button type="submit"></button>
+                            </div>
                         </form>
                     </div>
                 </div>
