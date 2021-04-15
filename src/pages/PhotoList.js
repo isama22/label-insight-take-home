@@ -7,8 +7,10 @@ import Modal from "./Modal";
 class PhotoList extends React.Component {
     state = {
         photos: [],
-        showModal: 0
+        showModal: 0,
+        comments: []
     };
+//i want to keep state in the parent component and pass props down to the children so they all stay in sync. i want to put comments in componentWillMount and have the comment component just display the data 
 
     getModal = value => {
         this.setState({ showModal: value });
@@ -37,24 +39,18 @@ class PhotoList extends React.Component {
                 {photos.length !== 0 && (
                     <div className="grid">
                         {photos.map(photo => (
-                            // <a href={photo.thumbnailUrl}>
-                            <div>
-                                <p>{photo.title}</p>
-                                <img src={photo.thumbnailUrl} alt="" />
-                                <button onClick={() => this.getModal(photo.id)}>Popup</button>
-                                <Modal
-                                    show={this.state.showModal === photo.id}
-                                    onHide={() => this.hideModal(photo.id)}
-                                    title={photo.title}
-                                    url={photo.url}
-                                />
-                            </div>
-                            // </a>
+                                <div className="modal-link">
+                                    <p className="title">{photo.title}</p>
+                                    <img src={photo.thumbnailUrl} alt="" className="img" onClick={() => this.getModal(photo.id)}/>
+                                    <Modal
+                                        show={this.state.showModal === photo.id}
+                                        onHide={() => this.hideModal(photo.id)}
+                                        title={photo.title}
+                                        url={photo.url}
+                                        id={photo.id}
+                                    />
+                                </div>
                         ))}
-
-                        <Link to="/">
-                            <button>Home</button>
-                        </Link>
                     </div>
                 )}
             </>

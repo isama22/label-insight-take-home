@@ -1,33 +1,64 @@
-.items {
-  background-color: blue;
-  width: 100%;
-  height: 100%;
+.App {
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: fixed;
+  background-color: #ab9b7d;
 }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  background-color: orange;
+  background-color:#e4dfbd;
   margin: 20px;
-  height: 650px;
-  overflow: scroll;
+  /* height: 650px; */
+  /* overflow: scroll; */
   padding: 20px;
+  width: 990px;
+  /* height: 100%; */
+  border-radius: 10px;
 }
 
 .grid-item {
   background-color: red;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+}
+.modal-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  flex-direction: column;
+  background-color: #a7bfdb;
+  border-radius: 10px;
+}
+.modal-link>p {
+  /* background-color: pink; */
+  padding-left: 10px;
+}
+.title {
+  font-weight: bold;
+  color: #6a511b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.img {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 10px;
+  /* border: solid 2px red; */
 }
 
-.img {
-  width: 100px;
-  height: 100px;
+.comments {
+  background-color: bisque;
+  border: solid 1px black;
+  padding: 20px;
+}
+
+.comment {
+  background-color: azure;
+}
+
+.comment-form {
+  background-color: lightpink;
 }
