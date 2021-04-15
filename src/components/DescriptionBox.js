@@ -13,14 +13,18 @@ class DescriptionBox extends Component {
     handleChange = e => {
     }
 
-    async componentDidMount(){
+    async componentDidMount() {
     }
-    render(){
+    render() {
         return (
             <>
-            <div>
-                <Description id={this.state.id}/>
-                <input type="text" placeholder={this.state.id}/>
+                <div className="description-box">
+                    <Description id={this.state.id} />
+                    <div className="input-div">
+                        <p>add a description: </p>
+                        <input type="text" placeholder={this.state.id} />
+                        <button>  →  </button>
+                    </div>
                 </div>
             </>
         )

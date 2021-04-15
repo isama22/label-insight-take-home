@@ -50,18 +50,41 @@
   cursor: pointer;
 }
 
+.description-box {
+  background-color: #a6bbd1;
+  border-radius: 10px;
+  margin: 20px;
+  width: 500px;
+  text-align: center;
+}
+
 .comments {
-  background-color: bisque;
+  /* background-color: bisque; */
   border: solid 1px black;
   padding: 20px;
 }
 
-.comment {
-  background-color: azure;
+.description {}
+
+.input-div {
+  border-top: 1px solid black;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.comment-form {
-  background-color: lightpink;
+input {
+  border: solid 1px black;
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 5px;
+  height: 10px;
+  margin: 20px;
+}
+button {
+  height: 20px;
 }
 
 .modal {
