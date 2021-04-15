@@ -6,10 +6,8 @@ import Modal from "../components/Modal";
 class PhotoList extends React.Component {
     state = {
         photos: [],
-        showModal: 0,
-        comments: []
+        showModal: 0
     };
-//i want to keep state in the parent component and pass props down to the children so they all stay in sync. i want to put comments in componentWillMount and have the comment component just display the data 
 
     getModal = value => {
         this.setState({ showModal: value });

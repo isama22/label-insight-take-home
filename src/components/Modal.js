@@ -5,7 +5,6 @@ import DescriptionBox from './DescriptionBox'
 class Modal extends Component {
 
     render() {
-        // console.log(this.props.show);
         return (
             <>
                 {this.props.show && (
