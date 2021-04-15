@@ -118,4 +118,5 @@ button {
   border-radius: 20px;
   padding: 5px;
   font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
 }

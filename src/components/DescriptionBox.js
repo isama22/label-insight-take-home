@@ -25,6 +25,7 @@ class DescriptionBox extends Component {
     handleFormSubmit(e) {
         localStorage.setItem('document' + this.state.id, JSON.stringify(this.state));
         e.preventDefault()
+        e.target.reset();
     }
 
     componentDidMount() {
@@ -52,6 +53,7 @@ class DescriptionBox extends Component {
                                 <input
                                     type="text"
                                     name="description"
+                                    // value={this.state.description}
                                     onChange={this.handleChange}
                                     placeholder={"add a description"} />
                                 <button type="submit">  →  </button>
