@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Comment from './Comment'
+import Description from './Description'
 import '../App.css'
 
-class Comments extends Component {
+class DescriptionBox extends Component {
     state = {
-        comment: '',
+        description: '',
         id: this.props.id
     }
-    handleAddComment = async (e) => {
+    handleAddDescription = async (e) => {
     }
 
     handleChange = e => {
@@ -19,11 +19,11 @@ class Comments extends Component {
         return (
             <>
             <div>
-                <Comment id={this.state.id}/>
+                <Description id={this.state.id}/>
                 <input type="text" placeholder={this.state.id}/>
                 </div>
             </>
         )
     }
 }
-export default Comments
+export default DescriptionBox
