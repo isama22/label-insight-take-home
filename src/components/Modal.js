@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Modal.css";
+import "../App.css";
 import Comments from './Comments'
 
 class Modal extends Component {
@@ -9,14 +9,12 @@ class Modal extends Component {
         return (
             <>
                 {this.props.show && (
-                    <div className="modal" onClick={this.props.onHide}>
+                    <div className="modal">
                         <div className="modal-scroll">
-                            <p>{this.props.title}</p>
-                            {/* <p>{this.props.id}</p> */}
-                            <img src={this.props.url} alt="" className="url-img" />
+                            <h3 className="title">{this.props.title}</h3>
+                            <img src={this.props.url} alt="" className="url-img" onClick={this.props.onHide}/>
                             <Comments 
                             id={this.props.id}
-                            // photo={this.props.photo}
                             />
                         </div>
                     </div>
