@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-// import Description from './Description'
 import '../App.css'
 
 class DescriptionBox extends Component {
-    
+
     userData;
 
     constructor(props) {
