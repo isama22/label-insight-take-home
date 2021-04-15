@@ -2,6 +2,11 @@
   display: flex;
   justify-content: center;
   background-color: #f5f2eb;
+  text-transform: capitalize;
+}
+
+*:focus {
+  outline: 0;
 }
 
 .grid {
@@ -17,30 +22,21 @@
   border-radius: 10px;
 }
 
-.grid-item {
-  background-color: red;
-  width: 150px;
-  height: 150px;
-}
-
 .modal-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: left;
+  text-align: center;
   flex-direction: column;
   background-color: #c8d3c3;
   border-radius: 10px;
-}
-
-.modal-link>p {
-  padding-left: 10px;
 }
 
 .title {
   font-weight: bold;
   color: #6a511b;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 4px;
 }
 
 .img {
@@ -48,47 +44,7 @@
   height: 75px;
   margin-bottom: 10px;
   cursor: pointer;
-}
-
-.description-box {
-  background-color: rgb(43,20,20, 0.15);
-  border-radius: 10px;
-  margin: 20px;
-  width: 500px;
-  text-align: center;
-}
-
-.description {
-  border-radius: 10px;
-  background-color: rgb(43,20,20, 0.15);
   margin: 10px;
-  padding: 1px;
-}
-.input-div {
-  /* border-top: 1px solid black; */
-  border-radius: 10px;
-  background-color: rgb(43,20,20, 0.15);
-  margin: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-
-input {
-  border: solid 1px black;
-  background-color: aliceblue;
-  border-radius: 20px;
-  padding: 5px;
-  height: 10px;
-  margin: 20px;
-  text-align: center;
-}
-
-button {
-  height: 20px;
 }
 
 .modal {
@@ -118,6 +74,48 @@ button {
   height: 600px;
 }
 
-.close-btn {
-  width: 100px;
+.description-box {
+  background-color: rgb(43, 20, 20, 0.15);
+  border-radius: 10px;
+  margin: 20px;
+  width: 500px;
+  text-align: center;
+}
+
+.description {
+  border-radius: 10px;
+  background-color: rgb(43, 20, 20, 0.15);
+  margin: 10px;
+  padding: 1px;
+}
+
+.input-div {
+  border-radius: 10px;
+  background-color: rgb(43, 20, 20, 0.15);
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border: solid 1px black;
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 5px;
+  height: 15px;
+  margin: 20px;
+  text-align: center;
+}
+
+button {
+  width: 40px;
+  border: solid 1px black;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 }

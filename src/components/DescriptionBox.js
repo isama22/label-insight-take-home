@@ -54,7 +54,7 @@ class DescriptionBox extends Component {
                                     name="description"
                                     onChange={this.handleChange}
                                     placeholder={"add a description"} />
-                                <button type="submit">Submit</button>
+                                <button type="submit">  →  </button>
                             </div>
                         </form>
                     </div>
