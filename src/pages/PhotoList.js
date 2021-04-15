@@ -38,9 +38,17 @@ class PhotoList extends React.Component {
                 {photos.length !== 0 && (
                     <div className="grid">
                         {photos.map(photo => (
-                                <div className="modal-link">
+                                <div 
+                                className="modal-link" 
+                                key={photo.id}
+                                >
                                     <p className="title">{photo.title}</p>
-                                    <img src={photo.thumbnailUrl} alt="" className="img" onClick={() => this.getModal(photo.id)}/>
+                                    <img 
+                                    src={photo.thumbnailUrl} 
+                                    alt="" 
+                                    className="img" 
+                                    onClick={() => this.getModal(photo.id)}
+                                    />
                                     <Modal
                                         show={this.state.showModal === photo.id}
                                         onHide={() => this.hideModal(photo.id)}

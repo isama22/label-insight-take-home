@@ -3,27 +3,32 @@ import '../App.css'
 
 class DescriptionBox extends Component {
 
-    userData;
-
+    documentData;
     constructor(props) {
         super(props);
-        this.onChangeDescription = this.onChangeDescription.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.state = {
-            description: '',
-            id: this.props.id,
+            description: ''
         }
     }
 
-    onChangeDescription(e) {
-        this.setState({ id: this.props.id, description: e.target.value })
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+    // on form submit...
+    handleFormSubmit(e) {
+        e.preventDefault()
+        localStorage.setItem('document', JSON.stringify(this.state));
     }
 
+    // React Life Cycle
     componentDidMount() {
-        this.userData = JSON.parse(localStorage.getItem('user'));
-        if (localStorage.getItem('user')) {
+        this.documentData = JSON.parse(localStorage.getItem('document'));
+
+        if (localStorage.getItem('document')) {
             this.setState({
-                description: this.userData.description
+                description: this.documentData.description
             })
         } else {
             this.setState({
@@ -31,16 +36,6 @@ class DescriptionBox extends Component {
             })
         }
     }
-
-    componentWillUpdate(nextProps, nextState) {
-        localStorage.setItem('user', JSON.stringify(nextState))
-    }
-
-    onSubmit(e) {
-        e.preventDefault()
-        console.log(this.state.props)
-    }
-
     render() {
         return (
             <>
@@ -48,13 +43,15 @@ class DescriptionBox extends Component {
                     <p>this is photo #{this.props.id}</p>
                     <p>{this.state.description}</p>
                     <div className="input-div">
-                        <form onSubmit={this.onSubmit} id={this.props.id}>
-                            <div>
-                                <label>description</label>
-                                <input type="text" onChange={this.onChangeDescription}  />
-                                <button type="submit"> → </button>
-                 
+                        <form onSubmit={this.handleFormSubmit}>
+                            <div className="form-group">
+                                <input 
+                                type="text" 
+                                name="description" 
+                                value={this.state.description} 
+                                onChange={this.handleChange} />
                             </div>
+                            <button type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
