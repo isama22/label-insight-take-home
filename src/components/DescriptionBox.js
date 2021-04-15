@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css'
+import '../pages/App/App.css'
 import Description from './Description'
 
 class DescriptionBox extends Component {
@@ -45,15 +45,16 @@ class DescriptionBox extends Component {
         return (
             <>
                 <div className="description-box">
-                    {this.state.description !== ' ' ? <Description description={this.state.description} /> : ' '}
-                    
+                    {this.state.description !== ' ' ?
+                        <Description description={this.state.description} />
+                        : ' '
+                    }
                     <div className="input-div">
                         <form onSubmit={this.handleFormSubmit}>
                             <div>
                                 <input
                                     type="text"
                                     name="description"
-                                    // value={this.state.description}
                                     onChange={this.handleChange}
                                     placeholder={"add a description"} />
                                 <button type="submit">  →  </button>

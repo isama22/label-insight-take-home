@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import '../App.css'
+import './App/App.css'
 import Modal from "../components/Modal";
 
 class PhotoList extends React.Component {
@@ -33,28 +33,28 @@ class PhotoList extends React.Component {
 
         return (
             <>
-                {photos.length !== 0 && (
+                { photos.length !== 0 && (
                     <div className="grid">
-                        {photos.map(photo => (
-                                <div 
-                                className="modal-link" 
+                        { photos.map(photo => (
+                            <div
+                                className="modal-link"
                                 key={photo.id}
-                                >
-                                    <p className="title">{photo.title}</p>
-                                    <img 
-                                    src={photo.thumbnailUrl} 
-                                    alt="" 
-                                    className="img" 
+                            >
+                                <p className="title">{photo.title}</p>
+                                <img
+                                    src={photo.thumbnailUrl}
+                                    alt=""
+                                    className="img"
                                     onClick={() => this.getModal(photo.id)}
-                                    />
-                                    <Modal
-                                        show={this.state.showModal === photo.id}
-                                        onHide={() => this.hideModal(photo.id)}
-                                        title={photo.title}
-                                        url={photo.url}
-                                        id={photo.id}
-                                    />
-                                </div>
+                                />
+                                <Modal
+                                    show={this.state.showModal === photo.id}
+                                    onHide={() => this.hideModal(photo.id)}
+                                    title={photo.title}
+                                    url={photo.url}
+                                    id={photo.id}
+                                />
+                            </div>
                         ))}
                     </div>
                 )}

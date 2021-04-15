@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import PhotoList from "./pages/PhotoList";
+import PhotoList from "../PhotoList";
 
 const App = () => {
   return (

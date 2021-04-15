@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../App.css";
+import '../pages/App/App.css'
 import DescriptionBox from './DescriptionBox'
 
 class Modal extends Component {
