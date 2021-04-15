@@ -14,7 +14,7 @@ class DescriptionBox extends Component {
             description: '',
             id: this.props.id
         }
-        console.log("id", this.props.id);
+        console.log("id", this.props.id, this.state.description);
     }
 
     handleChange = (e) => {
@@ -23,9 +23,8 @@ class DescriptionBox extends Component {
 
 
     handleFormSubmit(e) {
-        e.preventDefault()
         localStorage.setItem('document' + this.state.id, JSON.stringify(this.state));
-        // this.setState({ description: ""});
+        e.preventDefault()
     }
 
     componentDidMount() {
@@ -45,18 +44,18 @@ class DescriptionBox extends Component {
         return (
             <>
                 <div className="description-box">
-                    <p>this is photo #{this.props.id}</p>
-                    <Description description={this.state.description} />
+                    {this.state.description !== ' ' ? <Description description={this.state.description} /> : ' '}
+                    
                     <div className="input-div">
                         <form onSubmit={this.handleFormSubmit}>
-                            <div className="form-group">
+                            <div>
                                 <input
                                     type="text"
                                     name="description"
-                                    value={this.state.description}
-                                    onChange={this.handleChange} />
+                                    onChange={this.handleChange}
+                                    placeholder={"add a description"} />
+                                <button type="submit">Submit</button>
                             </div>
-                            <button type="submit">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 .App {
   display: flex;
   justify-content: center;
-  background-color: #ab9b7d;
+  background-color: #f5f2eb;
 }
 
 .grid {
@@ -10,7 +10,7 @@
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  background-color: #e4dfbd;
+  background-color: #ece2cb;
   margin: 20px;
   padding: 20px;
   width: 990px;
@@ -29,7 +29,7 @@
   align-items: center;
   text-align: left;
   flex-direction: column;
-  background-color: #a7bfdb;
+  background-color: #c8d3c3;
   border-radius: 10px;
 }
 
@@ -51,29 +51,31 @@
 }
 
 .description-box {
-  background-color: #a6bbd1;
+  background-color: rgb(43,20,20, 0.15);
   border-radius: 10px;
   margin: 20px;
   width: 500px;
   text-align: center;
 }
 
-.comments {
-  /* background-color: bisque; */
-  border: solid 1px black;
-  padding: 20px;
+.description {
+  border-radius: 10px;
+  background-color: rgb(43,20,20, 0.15);
+  margin: 10px;
+  padding: 1px;
 }
-
-/* .description {} */
-
 .input-div {
-  border-top: 1px solid black;
+  /* border-top: 1px solid black; */
+  border-radius: 10px;
+  background-color: rgb(43,20,20, 0.15);
+  margin: 10px;
   padding: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
+
 
 input {
   border: solid 1px black;
@@ -82,7 +84,9 @@ input {
   padding: 5px;
   height: 10px;
   margin: 20px;
+  text-align: center;
 }
+
 button {
   height: 20px;
 }
@@ -95,7 +99,7 @@ button {
   left: 10%;
   padding: 10px;
   box-shadow: 0 10px 30px 0 rgba(127, 127, 127, 0.3);
-  background: #8ba1b9;
+  background: #c8d3c3;
   border-radius: 10px;
   overflow: scroll;
   height: 600px;
