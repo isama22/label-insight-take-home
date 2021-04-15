@@ -1,0 +1,47 @@
+
+.description-box {
+    background-color: rgb(43, 20, 20, 0.15);
+    border-radius: 10px;
+    margin: 20px;
+    width: 500px;
+    text-align: center;
+  }
+  
+  .description {
+    border-radius: 10px;
+    background-color: rgb(43, 20, 20, 0.15);
+    margin: 10px;
+    padding: 1px;
+  }
+  
+  .input-div {
+    border-radius: 10px;
+    background-color: rgb(43, 20, 20, 0.15);
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input {
+    border: solid 1px black;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 5px;
+    height: 15px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  button {
+    width: 40px;
+    border: solid 1px black;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+  }

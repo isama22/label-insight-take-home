@@ -1,0 +1,28 @@
+
+.modal {
+    position: fixed;
+    top: 6%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
+    padding: 10px;
+    box-shadow: 0 10px 30px 0 rgba(127, 127, 127, 0.3);
+    background: #c8d3c3;
+    border-radius: 10px;
+    overflow: scroll;
+    height: 600px;
+  }
+  
+  .modal-scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .url-img {
+    cursor: pointer;
+    width: 600px;
+    height: 600px;
+  }
+  

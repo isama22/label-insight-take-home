@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../pages/App/App.css'
-import Description from './Description'
+import './DescriptionBox.css'
+import Description from '../Description'
 
 class DescriptionBox extends Component {
 

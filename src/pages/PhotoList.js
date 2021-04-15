@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import './App/App.css'
-import Modal from "../components/Modal";
+import Modal from "../components/Modal/Modal";
 
 class PhotoList extends React.Component {
     state = {
