@@ -10,12 +10,13 @@ class DescriptionBox extends Component {
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
-            description: ''
+            description: '',
+            id: this.props.id,
         }
     }
 
     onChangeDescription(e) {
-        this.setState({ description: e.target.value })
+        this.setState({ id: this.props.id, description: e.target.value })
     }
 
     componentDidMount() {
@@ -39,17 +40,20 @@ class DescriptionBox extends Component {
         e.preventDefault()
         console.log(this.state.props)
     }
+
     render() {
         return (
             <>
                 <div className="description-box">
+                    <p>this is photo #{this.props.id}</p>
                     <p>{this.state.description}</p>
                     <div className="input-div">
-                        <form onSubmit={this.onSubmit}>
+                        <form onSubmit={this.onSubmit} id={this.props.id}>
                             <div>
                                 <label>description</label>
-                                <input type="text" onChange={this.onChangeDescription} />
-                                <button type="submit"></button>
+                                <input type="text" onChange={this.onChangeDescription}  />
+                                <button type="submit"> → </button>
+                 
                             </div>
                         </form>
                     </div>
